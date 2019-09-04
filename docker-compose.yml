@@ -21,7 +21,7 @@ services:
     - web
     - default
     labels:
-    - "traefik.backend=homepage"
+    - "traefik.backend=graphql"
     - "traefik.docker.network=web"
     - "traefik.frontend.rule=Host:api.robbo.xyz"
     - "traefik.enable=true"
