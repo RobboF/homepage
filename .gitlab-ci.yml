@@ -10,3 +10,9 @@ build:
   stage: build
   script:
     - docker build -t registry.gitlab.com/robbof/homepage .
+    - docker push registry.gitlab.com/robbof/homepage
+
+deploy:
+  stage: deploy
+  script:
+    - docker stack deploy -c docker-compose HOMEPAGE
