@@ -16,4 +16,4 @@ build:
 deploy:
   stage: deploy
   script:
-    - docker stack deploy -c docker-compose HOMEPAGE
+    - docker stack deploy -c docker-compose.yml HOMEPAGE
