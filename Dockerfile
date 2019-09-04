@@ -1,6 +1,6 @@
 FROM node as builder
 WORKDIR /app
-COPY . /app
+COPY ./data /app
 ENV PATH /app/node_modules/.bin:$PATH
 RUN npm install --silent
 RUN npm install react-scripts -g --silent 
