@@ -16,5 +16,6 @@ build:
 deploy:
   stage: deploy
   script:
+    - docker login -u RobboF -p $RobboPAT $CI_REGISTRY
     - docker pull registry.gitlab.com/robbof/homepage
     - docker stack deploy -c docker-compose.yml HOMEPAGE
