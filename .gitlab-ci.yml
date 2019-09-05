@@ -1,4 +1,4 @@
-image: docker:19.03.1-dind
+image: docker:18.06.1
 
 # services:
 #   - docker:19.03.1-dind
