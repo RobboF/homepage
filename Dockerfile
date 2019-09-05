@@ -8,6 +8,7 @@ RUN npm run build
 
 FROM httpd 
 COPY .htaccess /usr/local/apache2/htdocs/
+COPY httpd.conf /usr/local/apache2/conf/
 #RUN sed -i "/\<Directory.*htdocs\>/r /usr/local/apache2/add.txt" /usr/local/apache2/conf/httpd.conf
 RUN sed -i '/LoadModule rewrite_module/s/^#//g' /usr/local/apache2/conf/httpd.conf
 
