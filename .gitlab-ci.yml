@@ -1,4 +1,7 @@
-image: docker:19.03-dind
+image: docker:19.03.1-dind
+
+# services:
+#   - docker:19.03.1-dind
 
 before_script:
   - docker info
