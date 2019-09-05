@@ -12,6 +12,7 @@ function ArticleList() {
                 Abstract
                 Title
                 date
+                ImageURL
               }
             }
     `);
@@ -20,7 +21,7 @@ function ArticleList() {
     if (error) return <p>Error :(</p>;
   
     return data.blogPosts.map((el, idx) => (
-      <ArticleSnippet title={el.Title} date={el.date} abstract={el.Abstract} key={idx}/>
+      <ArticleSnippet title={el.Title} date={el.date} abstract={el.Abstract} key={idx} picture={el.ImageURL}/>
     ));
   }
   export default ArticleList
