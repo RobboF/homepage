@@ -16,4 +16,5 @@ build:
 deploy:
   stage: deploy
   script:
+    - docker pull registry.gitlab.com/robbof/homepage
     - docker stack deploy -c docker-compose.yml HOMEPAGE
