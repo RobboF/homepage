@@ -23,7 +23,8 @@ services:
     labels:
     - "traefik.backend=graphql"
     - "traefik.docker.network=web"
-    - "traefik.frontend.rule=Host:robbo.xyz;Path:/v1/graphql"
+    - "traefik.api.frontend.rule=Host:robbo.xyz;Path:/v1/graphql"
+    - "traefik.graphql.frontend.rule=Host:graphql.robbo.xyz"
     - "traefik.enable=true"
     - "traefik.port=8080"
   homepage:
