@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ApolloClient from 'apollo-boost';
+// import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-const client = new ApolloClient({
-  uri: 'https://robbo.xyz/v1/graphql',
-});
+import client from "./components/utilities/hasuraClient.js"
+
+// const client = new ApolloClient({
+//   uri: 'https://robbo.xyz/v1/graphql',
+// });
 
 ReactDOM.render(
     (<ApolloProvider client={client}>
