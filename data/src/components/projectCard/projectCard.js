@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-
+import Throbber from '../utilities/throbber.js'
 export default function ProjectCard(props) {
     const { loading, error, data } = useQuery(gql`
     {
@@ -15,7 +15,7 @@ export default function ProjectCard(props) {
       }
     `);
   
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Throbber/>;
     if (error) return <p>Error :(</p>;
     return data.projects.map((project, idx) => (
 

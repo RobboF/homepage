@@ -2,20 +2,20 @@ import React from 'react'
 import { useSubscription } from '@apollo/react-hooks';
 import commentSubscription from '../utilities/commentSubscription.js'
 // import { gql } from 'apollo-boost';
+import Throbber from '../utilities/throbber.js'
 
 import CommentItem from '../commentItem/commentItem'
 function CommentList(props) {
     // const title = props.match.params.paramTitle.replace(/-/g, " ")
     const { loading, error, data } = useSubscription(commentSubscription, {})
   
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Throbber/>;
     if (error) return <p>Error :(</p>;
         console.log(error)
-        console.log(loading)
     if (data.comments.length > 0){
 
       return data.comments.map(comment => (
-        <CommentItem comment={comment} key={comment.id} />
+        <CommentItem className="pa5" comment={comment} key={comment.id} />
         ))
     } else {
       return (

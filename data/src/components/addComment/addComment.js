@@ -31,7 +31,7 @@ const AddComment = (props) => {
       <label htmlFor="comment" className="f6 b db mb2">Comments </label>
       <textarea id="comment" name="comment" className="db border-box hover-black w-100 ba b--black-20 pa2 mb2" aria-describedby="comment-desc" onChange={e => setComment(e.target.value)}></textarea>
       {/* <small id="comment-desc" className="f6 black-60">Helper text for a form control. Can use this text to <a href="#" className="link underline black-80 hover-blue">link to more info.</a></small> */}
-      <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Sign Up" onClick={() => HandleSubmit(username, comment, props.projectId)}/></div>
+      <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Submit" onClick={() => HandleSubmit(username, comment, props.projectId)}/></div>
     </div>
     );
   }

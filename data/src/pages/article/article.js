@@ -5,7 +5,7 @@ import BlogPost from '../../components/blogPost/blogPost'
 import ArticleNav from '../../components/articleNav/articleNav'
 import CommentList from '../../components/commentList/commentList'
 import AddComment from '../../components/addComment/addComment'
-
+import Throbber from '../../components/utilities/throbber.js'
 function parseForNewLines(body) {
     return body.split(/\\n/)
      
@@ -25,7 +25,7 @@ function Article(props) {
       }
     `);
   
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Throbber/>;
     if (error) return <p>Error :(</p>;
     const returnedObject = data.blogPosts[0]
     return (
