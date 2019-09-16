@@ -3,6 +3,9 @@ import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import BlogPost from '../../components/blogPost/blogPost'
 import ArticleNav from '../../components/articleNav/articleNav'
+import CommentList from '../../components/commentList/commentList'
+import AddComment from '../../components/addComment/addComment'
+
 function parseForNewLines(body) {
     return body.split(/\\n/)
      
@@ -29,6 +32,9 @@ function Article(props) {
         <div>
             <ArticleNav/>
             <BlogPost Title={returnedObject.Title} Subtitle={returnedObject.Subtitle} date={returnedObject.date} body={parseForNewLines(returnedObject.Body)}/>
+            <h1 className="ph5 f2 fw9 mb3 mt0 pt3">Comments:</h1>
+            <CommentList projectId={returnedObject.uuid}/>
+            <AddComment projectId={returnedObject.uuid}/>
         </div>
     )
   }
