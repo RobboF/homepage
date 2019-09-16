@@ -7,13 +7,6 @@ import Social from './pages/social/social'
 import './App.css';
 
 import Article from './pages/article/article'
-// const routeBlog = (data) => {
-//   data.blogPosts.map(({ uuid, Abstract, Title, date }) => (
-//       <Route path={'/' + Title.replace(/ /g, "-")} exact render={() => (<Article/>)} />
-//       // console.log('/' + Title.replace(/ /g, "-"))
-//       ))
-// }
-
 export default class App extends Component {
 
   constructor(props) {

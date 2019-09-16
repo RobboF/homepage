@@ -2,7 +2,6 @@ import React from 'react'
 import BlogBody from '../blogBody/blogBody'
 
 export default function blogPost(props) {
-    console.log(props)
     return (
         <article className="cf ph3 ph5-ns pv5">
         <header className="fn fl-ns w-25-ns pr4-ns">

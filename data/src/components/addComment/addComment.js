@@ -12,24 +12,17 @@ const POST_MUTATION = gql`
         }
     }
 `
-
 const AddComment = (props) => {
   const [addTodo] = useMutation(POST_MUTATION);
   const [username, setUsername] = useState('')
   const [comment, setComment] = useState('')
   const HandleSubmit = (username, comment, projectId) => {
-    console.log("username: ", username)
-    console.log("comment: ", comment)
-    console.log("projectId: ", projectId)
     if (username) {
       if (comment) {
         addTodo({ variables: { username: username, comment: comment, projectId: projectId}})
         toast.success("Comment Posted! 🦄")
       } else toast.error("Please Enter a Comment") 
     } else toast.error("Please Enter a Username")
-
-    
-    
   }
   return (
       <div className=" pa4 black-80 flex flex-column center ba mw7-ns">
@@ -45,25 +38,3 @@ const AddComment = (props) => {
     );
   }
   export default AddComment
-  // <div>
-  //   <form
-  //     onSubmit={e => {
-  //       e.preventDefault();
-  //       addTodo({ variables: { username: username.value, comment: comment.value, projectId: props.projectId } });
-  //       // input.value = '';
-  //     }}
-  //   >
-  //     <input
-  //       ref={node => {
-  //         username = node;
-  //         console.log(node)
-  //       }}
-  //     />
-  //     <input
-  //       ref={node => {
-  //         comment = node;
-  //       }}
-  //     />
-  //     <button type="submit">Add Todo</button>
-  //   </form>
-  // </div>
