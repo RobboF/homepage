@@ -8,6 +8,8 @@ before_script:
 
 build:
   stage: build
+  only: 
+    - master
   script:
     - docker build -t registry.gitlab.com/robbof/homepage .
     - docker login -u RobboF -p $RobboPAT $CI_REGISTRY
@@ -15,6 +17,8 @@ build:
 
 deploy:
   stage: deploy
+  only: 
+    - master
   script:
     - docker login -u RobboF -p $RobboPAT $CI_REGISTRY
     - docker pull registry.gitlab.com/robbof/homepage
