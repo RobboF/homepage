@@ -39,6 +39,7 @@ services:
       - "traefik.enable=true"
       - "traefik.port=80"
 
+
 volumes:
   db_data:
 

@@ -9,7 +9,7 @@ import {getMainDefinition} from 'apollo-utilities';
 
 // @ts-ignore
 const wsLink: ApolloLink = new WebSocketLink({
-    uri: "ws://robbo.xyz/v1/graphql",
+    uri: "ws://robbo.xyz:8080/v1/graphql",
     options: {
         reconnect: true
     }

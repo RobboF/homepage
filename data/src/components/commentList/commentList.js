@@ -10,7 +10,8 @@ function CommentList(props) {
   
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
-        console.log(data)
+        console.log(error)
+        console.log(loading)
     if (data.comments.length > 0){
 
       return data.comments.map(comment => (
@@ -18,8 +19,8 @@ function CommentList(props) {
         ))
     } else {
       return (
-        <header class="avenir tc-l ph3 ph4-ns pt4 pt5-ns">
-        <h1 class="f3 tc pb4 fw1 ">No Comments</h1>
+        <header className="avenir tc-l ph3 ph4-ns pt4 pt5-ns">
+        <h1 className="f3 tc pb4 fw1 ">No Comments</h1>
       </header>
       )
 

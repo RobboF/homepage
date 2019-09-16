@@ -23,14 +23,14 @@ const AddComment = (props) => {
   }
   return (
 
-    <div class=" pa4 black-80 flex flex-column center ba mw7-ns">
-      <label for="name" class="f6 b db mb2 mw3-ns">Name </label>
-      <input id="name" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc" onChange={e => setUsername(e.target.value)}/>
-      {/* <small id="name-desc" class="f6 black-60 db mb2">Helper text for the form control.</small> */}
-      <label for="comment" class="f6 b db mb2">Comments </label>
-      <textarea id="comment" name="comment" class="db border-box hover-black w-100 ba b--black-20 pa2 mb2" aria-describedby="comment-desc" onChange={e => setComment(e.target.value)}></textarea>
-      {/* <small id="comment-desc" class="f6 black-60">Helper text for a form control. Can use this text to <a href="#" class="link underline black-80 hover-blue">link to more info.</a></small> */}
-      <div class="mt3"><input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Sign Up" onClick={() => HandleSubmit(username, comment, props.projectId)}/></div>
+    <div className=" pa4 black-80 flex flex-column center ba mw7-ns">
+      <label htmlFor="name" className="f6 b db mb2 mw3-ns">Name </label>
+      <input id="name" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc" onChange={e => setUsername(e.target.value)}/>
+      {/* <small id="name-desc" className="f6 black-60 db mb2">Helper text for the form control.</small> */}
+      <label htmlFor="comment" className="f6 b db mb2">Comments </label>
+      <textarea id="comment" name="comment" className="db border-box hover-black w-100 ba b--black-20 pa2 mb2" aria-describedby="comment-desc" onChange={e => setComment(e.target.value)}></textarea>
+      {/* <small id="comment-desc" className="f6 black-60">Helper text for a form control. Can use this text to <a href="#" className="link underline black-80 hover-blue">link to more info.</a></small> */}
+      <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Sign Up" onClick={() => HandleSubmit(username, comment, props.projectId)}/></div>
     </div>
     );
   }

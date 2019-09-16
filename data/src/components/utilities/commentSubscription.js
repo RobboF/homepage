@@ -1,13 +1,13 @@
 import {gql} from 'apollo-boost';
 
 const commentSubscription = gql`
-    subscription {
+    subscription comments {
         comments {
-        comment
-        date
-        id
-        projectId
-        username
+            comment
+            date
+            id
+            projectId
+            username
         }
     }
 `;
