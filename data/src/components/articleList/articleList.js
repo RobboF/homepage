@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import React from 'react'
+import Throbber from '../utilities/throbber'
 
 import ArticleSnippet from '../../components/article-snippet/articleSnippet'
 
@@ -17,7 +18,7 @@ function ArticleList() {
             }
     `);
   
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Throbber/>;
     if (error) return <p>Error :(</p>;
   
     return data.blogPosts.map((el, idx) => (
