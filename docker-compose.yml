@@ -38,6 +38,7 @@ services:
       - "traefik.frontend.rule=Host:robbo.xyz"
       - "traefik.enable=true"
       - "traefik.port=80"
+      - "traefik.wss.protocol=https"
 
 volumes:
   db_data:
