@@ -25,8 +25,7 @@ services:
     - "traefik.docker.network=web"
     - "traefik.api.frontend.rule=Host:robbo.xyz;Path:/v1/graphql"
     - "traefik.graphql.frontend.rule=Host:graphql.robbo.xyz"
-    - "traefik.backend.frontend.rule=Host:wss.robbo.xyz;Path:/v1/graphql"
-    - "traefik.backend.protocol=ws"
+    - traefik.webservice.frontend.entryPoints=http,https,ws,wss
     - "traefik.enable=true"
     - "traefik.port=8080"
   homepage:
