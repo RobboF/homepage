@@ -20,6 +20,7 @@ const AddComment = (props) => {
     console.log("comment: ", comment)
     console.log("projectId: ", projectId)
     addTodo({ variables: { username: username, comment: comment, projectId: projectId}})
+    
   }
   return (
 
