@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 // import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import client from "./components/utilities/hasuraClient.js"
+import client from "./components/utilities/hasuraClient.ts"
 
 // const client = new ApolloClient({
 //   uri: 'https://robbo.xyz/v1/graphql',
