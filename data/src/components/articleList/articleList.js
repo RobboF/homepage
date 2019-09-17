@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import React from 'react'
-import Throbber from '../utilities/throbber'
+import Throbber from '../utilities/throbber/throbber'
 
 import ArticleSnippet from '../../components/article-snippet/articleSnippet'
 

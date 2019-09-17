@@ -5,7 +5,7 @@ import BlogPost from '../../components/blogPost/blogPost'
 import ArticleNav from '../../components/articleNav/articleNav'
 import CommentList from '../../components/commentList/commentList'
 import AddComment from '../../components/addComment/addComment'
-import Throbber from '../../components/utilities/throbber.js'
+import Throbber from '../../components/utilities/throbber/throbber.js'
 // import { ToastContainer, toast } from 'react-toastify';
 
 function parseForNewLines(body) {

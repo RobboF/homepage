@@ -2,7 +2,7 @@ import React from 'react'
 import { useSubscription } from '@apollo/react-hooks';
 import commentSubscription from '../utilities/commentSubscription.js'
 // import { gql } from 'apollo-boost';
-import Throbber from '../utilities/throbber.js'
+import Throbber from '../utilities/throbber/throbber'
 
 import CommentItem from '../commentItem/commentItem'
 function CommentList(props) {
