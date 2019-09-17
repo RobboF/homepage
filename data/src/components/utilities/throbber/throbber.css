@@ -8,15 +8,15 @@
     animation-direction: reverse;
     width:100px; /* you can use % */
     height: auto;
-    margin-left: 12px;
-    margin-top: 12px;
+    margin-left: 13px;
+    margin-top: 13px;
 }
 .circle-3 {
     animation: 3s linear rotate infinite;
     width:60px; /* you can use % */
     height: auto;
-    margin-left: 31px;
-    margin-top: 31px;
+    margin-left: 33px;
+    margin-top: 33px;
 }
 .container_row{
     display: grid;
