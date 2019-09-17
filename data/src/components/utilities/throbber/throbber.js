@@ -11,9 +11,9 @@ function Throbber(props) {
             <div className="center">
                 <div className="container_row">
                     {/* <img className="center" alt="Throbber" src={throbber}></img> */}
-                    <img class="circle-1" src={outerCircle}></img>
-                    <img class="circle-2" src={middleCircle}></img>
-                    <img class="circle-3" src={innerCircle}></img>
+                    <img alt="outer" class="circle-1" src={outerCircle}></img>
+                    <img alt="middle" class="circle-2" src={middleCircle}></img>
+                    <img alt="inner" class="circle-3" src={innerCircle}></img>
                 </div>
             </div>
 
