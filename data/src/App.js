@@ -6,7 +6,6 @@ import Portfolio from './pages/portfolio/portfolio'
 import Social from './pages/social/social'
 import './App.css';
 
-import Article from './pages/article/article'
 export default class App extends Component {
 
   constructor(props) {
@@ -20,7 +19,6 @@ export default class App extends Component {
         <Route path="/" exact render={() => (<Index/>)} />
         <Route path="/about" exact component={About} />
         <Route path="/portfolio" exact component={Portfolio}  /> 
-        <Route path="/blog/:paramTitle" exact component={Article} />
         <Route path="/contact" exact component={Social}  /> 
       </Router>
     )
