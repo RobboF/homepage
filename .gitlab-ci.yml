@@ -20,7 +20,7 @@ deploy:
   only: 
     - master
   script:
-    - docker login -u RobboF -p $RobboPAT $CI_REGISTRY
+    - docker login -u RobboF -p $RobboPAT2 $CI_REGISTRY
     - docker pull registry.gitlab.com/robbof/homepage
     - docker stack deploy -c docker-compose.yml HOMEPAGE
     - docker service update --force HOMEPAGE_homepage
