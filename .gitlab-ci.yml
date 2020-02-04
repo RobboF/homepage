@@ -12,7 +12,7 @@ build:
     - master
   script:
     - docker build -t registry.gitlab.com/robbof/homepage .
-    - docker login -u RobboF -p $RobboPAT $CI_REGISTRY
+    - docker login -u RobboF -p $RobboPAT2 $CI_REGISTRY
     - docker push registry.gitlab.com/robbof/homepage
 
 deploy:
