@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../images/logo.png'
+import logo from '../../images/logo-200.webp'
 export default function header() {
     return (
         <header className="tc pv4 pv5-ns">
