@@ -4,9 +4,6 @@ image: docker:18.06.1
 #   - docker info
 
 build:
-  image: docker
-  tags:
-   - gitlab-org-docker
   stage: build
   only: 
     - master
