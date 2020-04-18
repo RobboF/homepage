@@ -16,6 +16,7 @@ spec:
       containers:
       - name: k3s-demo
         image: registry.gitlab.com/robbof/homepage
+      imagePullPolicy: Always
       imagePullSecrets:
       - name: regcred
 ---

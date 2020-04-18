@@ -4,6 +4,9 @@ image: docker:18.06.1
 #   - docker info
 
 build:
+  image: docker
+  tags:
+   - gitlab-org-docker
   stage: build
   only: 
     - master
@@ -17,6 +20,4 @@ deploy:
   only: 
     - master
   script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker pull registry.gitlab.com/robbof/homepage
     - kubectl apply -f homepage.yaml
