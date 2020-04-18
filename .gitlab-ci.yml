@@ -1,5 +1,5 @@
-#image: docker:18.06.1
-image: docker
+image: docker:18.06.1
+#image: docker
 # before_script:
 #   - docker info
 
