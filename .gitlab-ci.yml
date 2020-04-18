@@ -2,7 +2,8 @@
 image: docker
 # before_script:
 #   - docker info
-
+services:
+  - docker:dind
 build:
   stage: build
   only: 
