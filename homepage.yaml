@@ -42,7 +42,7 @@ metadata:
 
 spec:
   rules:
-  - host: robbo.xyz
+  - host: staging.robbo.xyz
     http:
       paths:
       - path: /
