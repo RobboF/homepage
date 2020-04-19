@@ -42,10 +42,11 @@ metadata:
 
 spec:
   rules:
-  - host: staging.robbo.xyz
+  - host: robbo.xyz
     http:
       paths:
       - path: /
         backend:
           serviceName: k3s-demo
           servicePort: http
+
