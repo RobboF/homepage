@@ -5,6 +5,7 @@ metadata:
   namespace: default
 spec:
   replicas: 1
+  imagePullPolicy: Always
   selector:
     matchLabels:
       app: k3s-demo
@@ -16,7 +17,6 @@ spec:
       containers:
       - name: k3s-demo
         image: registry.gitlab.com/robbof/homepage
-      imagePullPolicy: Always
       imagePullSecrets:
       - name: regcred
 ---
