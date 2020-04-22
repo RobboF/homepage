@@ -13,7 +13,7 @@ steps:
   settings:
     auto_tag: true
     auto_tag_suffix: linux-amd64
-    repo: drone/drone
+    repo: robbo/homepage
     username:
       from_secret: docker_username
     password:
