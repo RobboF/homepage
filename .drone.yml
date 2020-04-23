@@ -1,24 +1,15 @@
 ---
 kind: pipeline
-type: docker
-name: linux-amd64
-
-platform:
-  arch: amd64
-  os: linux
+name: default
 
 steps:
-- name: publish
-  image: plugins/docker:18
+- name: docker  
+  image: plugins/docker
   settings:
-    auto_tag: true
-    auto_tag_suffix: linux-amd64
-    repo: robbo/homepage
     username:
       from_secret: docker_username
     password:
       from_secret: docker_password
-  when:
-    event:
-    - push
-    - tag
+    repo: robbof/homepage
+    tags: latest
+
