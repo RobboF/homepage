@@ -1,3 +1,4 @@
 # Homepage
 
-[![Build Status](https://drone.robbo.xyz/api/badges/RobboF/homepage/status.svg)](https://drone.robbo.xyz/RobboF/homepage)
+[![Build Status](https://cloud.drone.io/api/badges/RobboF/my-homepage/status.svg)](https://cloud.drone.io/RobboF/my-homepage)
+
