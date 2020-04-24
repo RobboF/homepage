@@ -12,3 +12,14 @@ steps:
       from_secret: docker_password
     repo: robbof/homepage
     tags: latest
+- name: k8s-deploy
+  image: sinlead/drone-kubectl
+  settings:
+    kubernetes_server:
+      from_secret: k8s_server
+    kubernetes_cert:
+      from_secret: k8s_cert
+    kubernetes_token:
+      from_secret: k8s_token
+  commands:
+    - kubectl apply -f deployment.yml
