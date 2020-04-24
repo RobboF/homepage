@@ -16,6 +16,12 @@ spec:
       containers:
       - name: k3s-demo
         image: registry.gitlab.com/robbof/homepage
+        env:
+        - name: REACT_APP_HASURA_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: hasura-secret
+              key: hasura-secret
         imagePullPolicy: Always
       imagePullSecrets:
       - name: regcred
