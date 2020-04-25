@@ -11,7 +11,9 @@ steps:
     password:
       from_secret: docker_password
     repo: robbof/homepage
-    tags: latest
+    tags: 
+      - latest
+      - ${DRONE_COMMIT_SHA}
 - name: k8s-deploy
   image: sinlead/drone-kubectl
   settings:
