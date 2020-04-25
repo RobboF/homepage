@@ -5,7 +5,7 @@ import Throbber from '../utilities/throbber/throbber.js'
 export default function ProjectCard(props) {
     const { loading, error, data } = useQuery(gql`
     {
-        projects {
+        homepage_projects {
           Description
           ImageURL
           Title
