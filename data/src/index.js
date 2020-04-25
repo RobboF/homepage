@@ -5,26 +5,12 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
-import { createHttpLink } from "apollo-link-http";
-import { setContext } from "apollo-link-context";
-import { InMemoryCache } from "apollo-cache-inmemory";
-
-const httpLink = createHttpLink({
-  uri: "https://graphql.robbo.xyz/v1/graphql",
-});
-
-const authLink = setContext((_, { headers }) => {
-  return {
-    headers: {
-      ...headers,
-      "x-hasura-admin-secret": `${process.env.REACT_APP_HASURA_SECRET}`,
-    },
-  };
-});
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  uri: "https://graphql.robbo.xyz/v1/graphql",
+  headers: {
+    "x-hasura-admin-secret": process.env.REACT_APP_HASURA_SECRET
+  }
 });
 ReactDOM.render(
   <ApolloProvider client={client}>
