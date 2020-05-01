@@ -8,9 +8,6 @@ import { ApolloProvider } from "@apollo/react-hooks";
 
 const client = new ApolloClient({
   uri: "https://graphql.robbo.xyz/v1/graphql",
-  headers: {
-    "x-hasura-admin-secret": process.env.REACT_APP_HASURA_SECRET
-  }
 });
 ReactDOM.render(
   <ApolloProvider client={client}>
