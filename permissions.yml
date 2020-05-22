@@ -11,13 +11,13 @@ metadata:
 rules:
 - apiGroups: ["apps"]
   resources: ["deployments"]
-  verbs: ["get"]
+  verbs: ["get","create"]
 - apiGroups: [""]
   resources: ["services"]
-  verbs: ["get"]
+  verbs: ["get","create"]
 - apiGroups: ["traefik.containo.us"]
   resources: ["ingressroutes"]
-  verbs: ["get"]
+  verbs: ["get","create"]
 ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -27,14 +27,14 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: homepage-deployer
-  namespace: default
+  namespace: homepage
 roleRef:
   kind: Role
   name: homepage-deployer
   apiGroup: rbac.authorization.k8s.io
 ---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: homepage-deployer
-  namespace: homepage
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   name: homepage-deployer
+#   namespace: homepage
