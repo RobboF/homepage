@@ -16,12 +16,6 @@ spec:
       containers:
       - name: homepage
         image: robbof/homepage
-        env:
-        - name: REACT_APP_HASURA_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: hasura-secret
-              key: hasura-secret
         imagePullPolicy: Always
       imagePullSecrets:
       - name: regcred
