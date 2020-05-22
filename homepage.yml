@@ -43,6 +43,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: homepage
+  namespace: homepage
 spec:
   routes:
     - match: "Host(`robbo.xyz`)"
