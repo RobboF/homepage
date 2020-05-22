@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k3s-demo
-  namespace: default
+  name: homepage
+  namespace: homepage
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: k3s-demo
+      app: homepage
   template:
     metadata:
       labels:
-        app: k3s-demo
+        app: homepage
     spec:
       containers:
-      - name: k3s-demo
+      - name: homepage
         image: robbof/homepage
         env:
         - name: REACT_APP_HASURA_SECRET
@@ -29,30 +29,28 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: k3s-demo
-  namespace: default
+  name: homepage
+  namespace: homepage
 spec:
   ports:
   - name: http
     targetPort: 80
     port: 80
   selector:
-    app: k3s-demo
+    app: homepage
 ---
-apiVersion: extensions/v1beta1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  name: k3s-demo
-  annotations:
-    kubernetes.io/ingress.class: "traefik"
-
+  name: homepage
 spec:
-  rules:
-  - host: robbo.xyz
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: k3s-demo
-          servicePort: http
-
+  routes:
+    - match: "Host(`robbo.xyz`)"
+      kind: Rule
+      services:
+      - kind: Service
+        name: homepage
+        namespace: homepage
+        port: 80
+  tls:
+    certResolver: default
