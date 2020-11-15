@@ -19,7 +19,7 @@ steps:
 - name: kustomize
   image: lyft/kustomizer
   commands:
-    - kustomize build .
+    - kustomize build ./k8s > k8s.yml
 - name: k8s-deploy
   image: sinlead/drone-kubectl
   settings:
@@ -30,4 +30,4 @@ steps:
     kubernetes_token:
       from_secret: k8s_token
   commands:
-    - kubectl apply -f homepage.yml
+    - kubectl apply -f ks8.yml
