@@ -11,9 +11,14 @@ steps:
     password:
       from_secret: docker_password
     repo: robbof/homepage
+    context: app
     tags: 
       - latest
       - ${DRONE_COMMIT_SHA}
+- name: kustomize
+  image: lyft/kustomizer
+  commands:
+    - kustomize build .
 - name: k8s-deploy
   image: sinlead/drone-kubectl
   settings:

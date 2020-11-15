@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: homepage
+  namespace: homepage
+spec:
+  routes:
+    - match: "Host(`robbo.xyz`)"
+      kind: Rule
+      services:
+      - kind: Service
+        name: homepage
+        namespace: homepage
+        port: 80
+  tls:
+    certResolver: default
