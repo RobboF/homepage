@@ -12,6 +12,7 @@ steps:
       from_secret: docker_password
     repo: robbof/homepage
     dockerfile: ./app/Dockerfile
+    context: ./app
     tags: 
       - latest
       - ${DRONE_COMMIT_SHA}
