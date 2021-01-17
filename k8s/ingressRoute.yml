@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: homepage
+  name: ingressroute
   namespace: homepage
 spec:
   routes:
@@ -9,7 +9,7 @@ spec:
       kind: Rule
       services:
       - kind: Service
-        name: homepage
+        name: homepage-service
         namespace: homepage
         port: 80
   tls:

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: homepage
+  name: deployment
   namespace: homepage
 spec:
   replicas: 1
@@ -11,8 +11,9 @@ spec:
   template:
     spec:
       containers:
-      - name: homepage
-        image: robbof/homepage
-        imagePullPolicy: Always
+        - name: homepage
+          image: robbof/homepage
+          imagePullPolicy: Always
       imagePullSecrets:
-      - name: regcred
+        - name: regcred
+        

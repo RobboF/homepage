@@ -5,7 +5,7 @@ commonLabels:
 namePrefix: homepage-
 namespace: homepage
 resources:
-- ./k8s/deployment.yml
-- ./k8s/ingressRoute.yml
-- ./k8s/service.yml
+- ./deployment.yml
+- ./ingressRoute.yml
+- ./service.yml
 
