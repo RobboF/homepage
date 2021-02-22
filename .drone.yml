@@ -1,7 +1,9 @@
 ---
 kind: pipeline
 name: default
-
+trigger:
+  branch:
+  - master
 steps:
 - name: docker  
   image: plugins/docker
