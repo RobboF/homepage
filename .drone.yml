@@ -28,12 +28,12 @@ steps:
     kubernetes_token:
       from_secret: k8s_token
   commands:
-    - sed -i 's^robbof/homepage^robbof/homepage:${DRONE_COMMIT_SHA}^g' k8s/kustomization.yml
+    - sed -i 's^robbof/homepage^robbof/homepage:${DRONE_COMMIT_SHA}^g' k8s/deployment.yml
     - kubectl apply -k k8s/
 
 - name: test
   image: busybox:latest
   commands:
     - ls
-    - cat k8s/kustomization.yml
+    - cat k8s/deployment.yml
 
