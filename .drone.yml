@@ -18,3 +18,15 @@ steps:
     tags: 
       - latest
       - ${DRONE_COMMIT_SHA}
+- name: deploy
+  image: sinlead/drone-kubectl
+  settings:
+    kubernetes_server:
+      from_secret: k8s_server
+    kubernetes_cert:
+      from_secret: k8s_cert
+    kubernetes_token:
+      from_secret: k8s_token
+  commands:
+    - sed -i 's^robbof/homepage^robbof/homepage:${DRONE_COMMIT_SHA}^g
+    - kubectl apply -k k8s/
