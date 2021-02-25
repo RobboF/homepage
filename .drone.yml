@@ -28,5 +28,5 @@ steps:
     kubernetes_token:
       from_secret: k8s_token
   commands:
-    - sed -i 's^robbof/homepage^robbof/homepage:${DRONE_COMMIT_SHA}^g
+    - sed -i 's^robbof/homepage^robbof/homepage:${DRONE_COMMIT_SHA}^g' k8s/kustomization.yml
     - kubectl apply -k k8s/
