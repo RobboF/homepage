@@ -5,19 +5,19 @@ trigger:
   branch:
   - master
 steps:
-- name: docker  
-  image: plugins/docker
-  settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-    repo: robbof/homepage
-    dockerfile: ./app/Dockerfile
-    context: ./app
-    tags: 
-      - latest
-      - ${DRONE_COMMIT_SHA}
+  #- name: docker  
+  #  image: plugins/docker
+  #  settings:
+  #    username:
+  #      from_secret: docker_username
+  #    password:
+  #      from_secret: docker_password
+  #    repo: robbof/homepage
+  #    dockerfile: ./app/Dockerfile
+  #    context: ./app
+  #    tags: 
+  #      - latest
+  #      - ${DRONE_COMMIT_SHA}
 - name: deploy
   image: sinlead/drone-kubectl
   settings:
@@ -30,3 +30,9 @@ steps:
   commands:
     - sed -i 's^robbof/homepage^robbof/homepage:${DRONE_COMMIT_SHA}^g' k8s/kustomization.yml
     - kubectl apply -k k8s/
+
+- name: test
+  image: busybox:latest
+  commands:
+    ls
+
