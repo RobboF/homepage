@@ -1,7 +1,9 @@
 ---
 kind: pipeline
 name: default
-
+trigger:
+  branch:
+  - master
 steps:
 - name: docker  
   image: plugins/docker
@@ -16,18 +18,3 @@ steps:
     tags: 
       - latest
       - ${DRONE_COMMIT_SHA}
-- name: kustomize
-  image: lyft/kustomizer
-  commands:
-    - kustomize build ./k8s > k8s.yml
-- name: k8s-deploy
-  image: sinlead/drone-kubectl
-  settings:
-    kubernetes_server:
-      from_secret: k8s_server
-    kubernetes_cert:
-      from_secret: k8s_cert
-    kubernetes_token:
-      from_secret: k8s_token
-  commands:
-    - kubectl apply -f ks8.yml
