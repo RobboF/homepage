@@ -35,4 +35,5 @@ steps:
   image: busybox:latest
   commands:
     - ls
+    - cat k8s/kustomization.yml
 
