@@ -2,8 +2,8 @@
 kind: pipeline
 name: default
 trigger:
-  branch:
-  - master
+  event:
+  - tag
 steps:
 - name: docker  
   image: plugins/docker
@@ -17,7 +17,7 @@ steps:
     context: ./app
     tags: 
       - latest
-      - ${DRONE_COMMIT_SHA}
+      - ${DRONE_TAG}
 - name: deploy
   image: sinlead/drone-kubectl
   settings:
@@ -28,6 +28,6 @@ steps:
     kubernetes_token:
       from_secret: k8s_token
   commands:
-    - sed -i 's^robbof/homepage^robbof/homepage:${DRONE_COMMIT_SHA}^g' k8s/deployment.yml
+    - sed -i 's^robbof/homepage^robbof/homepage:${DRONE_TAG}^g' k8s/deployment.yml
     - kubectl apply -k k8s/
 
