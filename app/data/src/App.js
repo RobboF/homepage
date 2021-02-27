@@ -14,32 +14,32 @@ function App() {
         // style={{ backgroundImage: `url(http://mrmrs.github.io/photos/u/009.jpg)`, backgroundRepeat: "no-repeat" }}
       >
         <div class="dtc v-mid">
-          <Logo fill="#ffffff30" height="25vh" />
+          <Logo fill="#ffffff99" height="25vh" />
           <h1 class=" f-headline-l fw1 white-60">Robbo.xyz</h1>
           <div class=" measure center flex justify-around w-100">
             <a href="https://www.linkedin.com/in/robbo-fisher/" title="LinkedIn">
               <FontAwesomeIcon
-                className="white-60"
                 icon={faLinkedin}
                 size="5x"
+                color="#ffffff30"
               />
             </a>
             <a href="https://twitter.com/RobboRob" title="Twitter">
               <FontAwesomeIcon
-                className="white-60"
+                color="#ffffff30"
                 icon={faTwitter}
                 size="5x"
               />
             </a>
             <a href="https://github.com/RobboF" title="Github">
               <FontAwesomeIcon
-                className="white-60"
+                color="#ffffff30"
                 icon={faGithubSquare}
                 size="5x"
               />
             </a>
             <a href="https://hub.docker.com/u/robbof" title="DockerHub">
-              <FontAwesomeIcon className="white-60" icon={faDocker} size="5x" />
+              <FontAwesomeIcon color="#ffffff30" icon={faDocker} size="5x" />
             </a>
           </div>
         </div>
