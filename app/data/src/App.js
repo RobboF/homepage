@@ -14,7 +14,7 @@ function App() {
         // style={{ backgroundImage: `url(http://mrmrs.github.io/photos/u/009.jpg)`, backgroundRepeat: "no-repeat" }}
       >
         <div class="dtc v-mid">
-          <Logo fill="#ffffff99" height="25vh" />
+          <Logo fill="#ffffff60" height="25vh" />
           <h1 class=" f-headline-l fw1 white-60">Robbo.xyz</h1>
           <div class=" measure center flex justify-around w-100">
             <a href="https://www.linkedin.com/in/robbo-fisher/" title="LinkedIn">
