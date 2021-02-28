@@ -1,29 +1,30 @@
 ---
 kind: pipeline
 name: default
-#trigger:
-#  event:
-#  - tag
+trigger:
+  event:
+  - tag
 steps:
-#- name: docker  
-#  image: plugins/docker
-#  settings:
-#    username:
-#      from_secret: docker_username
-#    password:
-#      from_secret: docker_password
-#    repo: robbof/homepage
-#    dockerfile: ./app/Dockerfile
-#    context: ./app
-#    tags: 
-#      - latest
-#      - ${DRONE_TAG}
 - name: test
   image: node
   commands:
     - cd ./app/data
     - yarn install
     - yarn test a
+- name: build
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: robbof/homepage
+    dockerfile: ./app/Dockerfile
+    context: ./app
+    tags: 
+      - latest
+      - ${DRONE_TAG}
+
 - name: deploy
   image: sinlead/drone-kubectl
   settings:
