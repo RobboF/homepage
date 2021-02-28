@@ -5,19 +5,19 @@ trigger:
   event:
   - tag
 steps:
-- name: docker  
-  image: plugins/docker
-  settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-    repo: robbof/homepage
-    dockerfile: ./app/Dockerfile
-    context: ./app
-    tags: 
-      - latest
-      - ${DRONE_TAG}
+#- name: docker  
+#  image: plugins/docker
+#  settings:
+#    username:
+#      from_secret: docker_username
+#    password:
+#      from_secret: docker_password
+#    repo: robbof/homepage
+#    dockerfile: ./app/Dockerfile
+#    context: ./app
+#    tags: 
+#      - latest
+#      - ${DRONE_TAG}
 - name: test
   image: node
   commands:
