@@ -18,6 +18,11 @@ steps:
     tags: 
       - latest
       - ${DRONE_TAG}
+- name: test
+  image: node
+  commands:
+    - cd /app/data
+    - yarn test a
 - name: deploy
   image: sinlead/drone-kubectl
   settings:
