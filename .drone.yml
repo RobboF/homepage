@@ -1,9 +1,9 @@
 ---
 kind: pipeline
 name: default
-trigger:
-  event:
-  - tag
+#trigger:
+#  event:
+#  - tag
 steps:
 #- name: docker  
 #  image: plugins/docker
@@ -21,7 +21,7 @@ steps:
 - name: test
   image: node
   commands:
-    - cd /app/data
+    - cd ./app/data
     - yarn test a
 - name: deploy
   image: sinlead/drone-kubectl
