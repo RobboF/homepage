@@ -22,6 +22,7 @@ steps:
   image: node
   commands:
     - cd ./app/data
+    - yarn install
     - yarn test a
 - name: deploy
   image: sinlead/drone-kubectl
