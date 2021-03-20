@@ -1,19 +1,31 @@
-FROM node as builder
+FROM node:alpine AS builder
 WORKDIR /app
-COPY ./data /app
-ENV PATH /app/node_modules/.bin:$PATH
-RUN npm install --silent
-RUN npm run build 
+COPY . .
+COPY --from=deps /app/node_modules ./node_modules
+RUN yarn build
 
-FROM httpd 
-COPY .htaccess /usr/local/apache2/htdocs/
-COPY httpd.conf /usr/local/apache2/conf/
-RUN sed -i '/LoadModule rewrite_module/s/^#//g' /usr/local/apache2/conf/httpd.conf
+# Production image, copy all the files and run next
+FROM node:alpine AS runner
+WORKDIR /app
 
-RUN { \
-  echo 'IncludeOptional conf.d/*.conf'; \
-} >> /usr/local/apache2/conf/httpd.conf \
-  && mkdir /usr/local/apache2/conf.d
+ENV NODE_ENV production
 
+# You only need to copy next.config.js if you are NOT using the default configuration
+# COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
 
-COPY --from=builder /app/build /usr/local/apache2/htdocs/
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+RUN chown -R nextjs:nodejs /app/.next
+USER nextjs
+
+EXPOSE 3000
+
+# Next.js collects completely anonymous telemetry data about general usage.
+# Learn more here: https://nextjs.org/telemetry
+# Uncomment the following line in case you want to disable telemetry.
+# RUN npx next telemetry disable
+
+CMD ["node_modules/.bin/next", "start"]
