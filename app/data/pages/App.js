@@ -1,7 +1,6 @@
-import { ReactComponent as Logo } from "./assets/images/logo.svg";
+import Logo from "../public/logo.svg";
 import { useMediaQuery } from "react-responsive";
 import Icons from "./Icons";
-import IconsMobile from "./IconsMobile";
 import {
   faLinkedin,
   faTwitter,
@@ -34,7 +33,7 @@ const App = () => {
         <div className="dtc v-mid">
           <Logo fill="#ffffff60" height={isTabletOrMobile ? "90vw" : "500px"} />
           <h1 className=" f-headline-1-ns f-subheadline fw1 white-60">Robbo.xyz</h1>
-         {isTabletOrMobile ? <IconsMobile iconArr={iconArr}/> : <Icons iconArr={iconArr}/>} 
+         <Icons iconArr={iconArr}/>
         </div>
       </div>
     </article>
