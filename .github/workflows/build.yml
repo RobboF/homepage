@@ -6,12 +6,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - run: npm install
-      - run: npm build
-      - run: npm export
+      - run: npm run install
+      - run: npm run build
+      - run: npm run export
       - uses: shallwefootball/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-
+          source_dir: 'out'
+          destination_dir: ''
