@@ -1,12 +1,12 @@
-name: learn-github-actions
+name: build-and-push-to-s3
 on: [push]
 jobs:
-  check-bats-version:
+  build-and-upload:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - run: npm run install
+      - run: npm install
       - run: npm run build
       - run: npm run export
       - uses: shallwefootball/s3-upload-action@master
