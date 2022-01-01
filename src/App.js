@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const App = () => {
   return (
     <div className="App">
-      <Logo fill="#FFFFFF60" height="700" />
+      <Logo data-testid='logo' fill="#FFFFFF60" height="50vh"/>
       <div className="IconsWrapper">
         <FontAwesomeIcon className="Icon" onClick={() => {window.open("https://www.linkedin.com/in/robbo-fisher/")}}  icon={faLinkedin} color="#ffffff30" size="2x"/>
         <FontAwesomeIcon className="Icon" onClick={() => {window.open("https://twitter.com/TheSkrubbie")}} icon={faTwitter} color="#ffffff30" size="2x"/>
